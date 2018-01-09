@@ -3,6 +3,7 @@
 from scrapy.spiders import CrawlSpider
 from scrapy.spiders import Rule
 from scrapy.linkextractors import LinkExtractor
+from ..settings import ENTRY_URL
 
 from ..output import output
 from ..content_parser import ModifyContent
@@ -10,9 +11,7 @@ from ..content_parser import ModifyContent
 
 class BiQuGeSpider(CrawlSpider):
     name = "biquge"
-    start_urls = [
-        'http://www.biqudu.com/0_398/'
-    ]
+    start_urls = ENTRY_URL
 
     rules = (
         Rule(LinkExtractor(allow=(r'https://www.biqudu.com/0_\d+/\d+.html',)),
