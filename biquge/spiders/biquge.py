@@ -15,7 +15,7 @@ class BiQuGeSpider(CrawlSpider):
     ]
 
     rules = (
-        Rule(LinkExtractor(allow=(r'http://www.biqudu.com/0_\d+/\d+.html',)),
+        Rule(LinkExtractor(allow=(r'https://www.biqudu.com/0_\d+/\d+.html',)),
              callback='parse_content',
              follow=False, ),
     )
